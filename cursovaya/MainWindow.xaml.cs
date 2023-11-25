@@ -15,14 +15,48 @@ using System.Windows.Shapes;
 
 namespace cursovaya
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dlt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ld_frm_file_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ld_frm_url_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void srch_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void listPic_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void categ_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
     }
 }
