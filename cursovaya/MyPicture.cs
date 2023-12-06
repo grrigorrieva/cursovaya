@@ -25,6 +25,7 @@ namespace cursovaya
             Name = name;
             Img = img;
             Categ = categ;
+            Tags = new List<string>();
         }
         public void add_tag(string tag)
         {
