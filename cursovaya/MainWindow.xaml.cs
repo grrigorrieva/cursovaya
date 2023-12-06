@@ -63,6 +63,16 @@ namespace cursovaya
 
                 foreach (MyPicture pic in pictures)
                     listPic.Items.Add(pic.Name);
+
+                categ.Items.Clear();
+
+                foreach (MyPicture pic in pictures)
+                {
+                    if (!(categ.Items.Contains(pic.Categ)))
+                        categ.Items.Add(pic.Categ);
+                }
+
+                categ.SelectedIndex = 0;
             }
         }
 
@@ -131,14 +141,14 @@ namespace cursovaya
 
         private void listPic_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ((categ.SelectedIndex != -1 && categ.SelectedIndex != 0) || (srch.Text.Length > 0 && categ.SelectedIndex != 0))
+            if ((categ.SelectedIndex == 0) && (srch.Text.Length == 0 && srch_by_tag_field.Text.Length == 0))
             {
                 if (listPic.SelectedIndex != -1)
-                    picImg.Source = ByteToImage(Convert.FromBase64String(TempPictures[listPic.SelectedIndex].Img));
+                    picImg.Source = ByteToImage(Convert.FromBase64String(pictures[listPic.SelectedIndex].Img));
             }
             else
                 if (listPic.SelectedIndex != -1)
-                    picImg.Source = ByteToImage(Convert.FromBase64String(pictures[listPic.SelectedIndex].Img));
+                    picImg.Source = ByteToImage(Convert.FromBase64String(TempPictures[listPic.SelectedIndex].Img));
         }
 
         private void categ_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -175,6 +185,33 @@ namespace cursovaya
             bitmap.EndInit();
 
             return (ImageSource)bitmap;
+        }
+
+        private void add_tag_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (listPic.SelectedIndex != -1 && listPic.Items.Count == pictures.Count && add_tag_field.Text.Length > 0)
+            {
+                pictures[listPic.SelectedIndex].add_tag(add_tag_field.Text);
+            }
+            else
+                MessageBox.Show("Select category all or fill in the tag field");
+        }
+
+        private void srch_by_tag_btn_Click(object sender, RoutedEventArgs e)
+        {
+            listPic.Items.Clear();
+            TempPictures.Clear();
+            foreach (MyPicture pic in pictures)
+            {
+                foreach (string tag in pic.Tags)
+                {
+                    if (tag.ToLower().Equals(srch_by_tag_field.Text.ToLower()))
+                    {
+                        listPic.Items.Add(pic.Name);
+                        TempPictures.Add(pic);
+                    }
+                }
+            }
         }
     }
 }

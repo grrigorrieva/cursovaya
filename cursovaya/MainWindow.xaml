@@ -8,14 +8,18 @@
         Title="MainWindow" Height="450" Width="800" Background="#FFE7B4B4">
     <Grid>
         <ListBox x:Name="listPic" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,60,562,174" SelectionChanged="listPic_SelectionChanged"/>
-        <Button x:Name="dlt" Content="delete" HorizontalAlignment="Left" Margin="184,370,0,0" VerticalAlignment="Top" Width="111" Height="24" Click="dlt_Click"/>
-        <ComboBox x:Name="categ" HorizontalAlignment="Left" Margin="50,33,0,0" VerticalAlignment="Top" Width="188" SelectionChanged="categ_SelectionChanged" Background="{x:Null}"/>
-        <Button x:Name="save" Content="save" HorizontalAlignment="Left" Margin="50,370,0,0" VerticalAlignment="Top" Height="24" Width="109" Click="save_Click"/>
-        <Button x:Name="ld_frm_file" Content="load from file" HorizontalAlignment="Left" Margin="319,370,0,0" VerticalAlignment="Top" Width="111" Height="24" Click="ld_frm_file_Click"/>
-        <Button x:Name="ld_frm_url" Content="load from url" HorizontalAlignment="Left" Margin="448,370,0,0" VerticalAlignment="Top" Height="24" Width="111" Click="ld_frm_url_Click"/>
+        <Button x:Name="dlt" Content="delete" HorizontalAlignment="Left" Margin="48,351,0,0" VerticalAlignment="Top" Width="111" Height="24" Click="dlt_Click"/>
+        <ComboBox x:Name="categ" HorizontalAlignment="Left" Margin="50,33,0,0" VerticalAlignment="Top" Width="188" SelectionChanged="categ_SelectionChanged" Background="{x:Null}" SelectedIndex="0"/>
+        <Button x:Name="save" Content="save" HorizontalAlignment="Left" Margin="48,316,0,0" VerticalAlignment="Top" Height="24" Width="109" Click="save_Click"/>
+        <Button x:Name="ld_frm_file" Content="load from file" HorizontalAlignment="Left" Margin="182,316,0,0" VerticalAlignment="Top" Width="111" Height="24" Click="ld_frm_file_Click"/>
+        <Button x:Name="ld_frm_url" Content="load from url" HorizontalAlignment="Left" Margin="182,351,0,0" VerticalAlignment="Top" Height="24" Width="111" Click="ld_frm_url_Click"/>
         <Button x:Name="srch_btn" Content="search" HorizontalAlignment="Left" Margin="585,370,0,0" VerticalAlignment="Top" Width="111" Height="24" Click="srch_btn_Click"/>
         <Image x:Name="picImg" HorizontalAlignment="Left" Height="237" Margin="295,60,0,0" VerticalAlignment="Top" Width="288" Stretch="Fill"/>
         <TextBox x:Name="srch" HorizontalAlignment="Left" Margin="562,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" Height="27"/>
+        <Button x:Name="add_tag_btn" Content="add tag " HorizontalAlignment="Left" Margin="330,339,0,0" VerticalAlignment="Top" Click="add_tag_btn_Click"/>
+        <Button x:Name="srch_by_tag_btn" Content="search by tag " HorizontalAlignment="Left" Margin="330,387,0,0" VerticalAlignment="Top" Click="srch_by_tag_btn_Click"/>
+        <TextBox x:Name="add_tag_field" HorizontalAlignment="Left" Margin="330,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="srch_by_tag_field" HorizontalAlignment="Left" Margin="330,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.473,0.207"/>
 
     </Grid>
 </Window>
