@@ -63,8 +63,9 @@ namespace cursovaya
 
                 foreach (MyPicture pic in pictures)
                     listPic.Items.Add(pic.Name);
-
+                
                 categ.Items.Clear();
+                categ.Items.Add("all");
 
                 foreach (MyPicture pic in pictures)
                 {
@@ -108,11 +109,8 @@ namespace cursovaya
             if (addPic.ShowDialog() == true)
             {
                 WebClient client = new WebClient();
-
                 string imageUrl = addPic.url.Text;
-
                 byte[] imageArray = client.DownloadData(imageUrl);
-
                 string base64ImageRepresentation = Convert.ToBase64String(imageArray);
 
                 MyPicture pic = new MyPicture(addPic.Name.Text, base64ImageRepresentation, addPic.Categr.Text);
